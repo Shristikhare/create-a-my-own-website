@@ -1,0 +1,205 @@
+/* Fonts + Base */
+*{
+  margin:0; padding:0; box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#05060f;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* Smooth scroll */
+html{scroll-behavior:smooth}
+
+/* Container */
+.container{width:90%; max-width:1300px; margin:auto}
+
+/* Header */
+#header{
+  position:fixed; top:0; width:100%;
+  background:rgba(10,10,20,0.4);
+  backdrop-filter:blur(10px);
+  padding:15px 0;
+  z-index:100;
+  transition:0.3s;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.nav-container{
+  display:flex; justify-content:space-between; align-items:center;
+}
+
+.logo{
+  font-size:1.7rem; font-weight:600;
+}
+.logo span{color:#00eaff}
+
+nav{
+  display:flex; gap:25px;
+}
+nav a{
+  text-decoration:none; color:#cbd5e1; font-weight:400;
+}
+nav a:hover{color:#00eaff}
+
+/* Buttons */
+.btn{
+  padding:10px 22px;
+  background:#00eaff;
+  color:#001219;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+}
+.btn-outline{
+  border:1px solid #00eaff; padding:10px 22px; border-radius:8px;
+  color:#00eaff;
+  text-decoration:none;
+}
+.btn-outline:hover{background:#00eaff;color:black}
+
+/* Mobile menu */
+.menu{display:none; font-size:1.5rem; color:#fff}
+@media(max-width:900px){
+  nav{
+    display:none;
+    position:absolute; top:70px; right:10px;
+    background:rgba(10,10,20,0.9);
+    padding:20px; border-radius:10px;
+    flex-direction:column; gap:15px;
+  }
+  nav.show{display:flex}
+  .menu{display:block}
+}
+
+/* HERO */
+.hero{
+  padding:160px 0 80px;
+  position:relative;
+  overflow:hidden;
+}
+.hero-glow{
+  position:absolute;
+  width:500px; height:500px;
+  background:#00eaff;
+  filter:blur(220px);
+  top:-100px; left:-150px;
+  opacity:0.4;
+}
+
+.hero-inner{
+  display:flex; justify-content:space-between; align-items:center;
+  flex-wrap:wrap;
+  gap:50px;
+}
+
+.hero-text{max-width:550px}
+.hero-text h1{
+  font-size:3.2rem; font-weight:700;
+}
+.highlight{color:#00eaff}
+.tagline{font-size:1.2rem; margin-top:10px; color:#94a3b8}
+.description{margin:18px 0; line-height:1.6; color:#cbd5e1}
+
+.hero-btns{margin-top:20px; display:flex; gap:15px}
+.socials{margin-top:20px; display:flex; gap:15px}
+.socials a{color:#00eaff; font-size:1.4rem}
+
+/* Hero image */
+.hero-img{
+  position:relative;
+  width:300px; height:300px;
+}
+.hero-img img{
+  width:100%; height:100%;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #00eaff50;
+}
+.floating-circle, .floating-circle2{
+  position:absolute;
+  width:120px; height:120px;
+  border-radius:50%;
+  background:#00eaff40;
+  filter:blur(40px);
+  animation:float 6s infinite ease-in-out;
+}
+.floating-circle{top:-20px; right:-20px}
+.floating-circle2{bottom:-20px; left:-20px; animation-delay:2s}
+
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-30px)}
+  100%{transform:translateY(0)}
+}
+
+/* Sections */
+.section{
+  padding:80px 0; text-align:center;
+}
+.title{
+  font-size:2.3rem; margin-bottom:40px; color:#00eaff;
+}
+
+/* Glass Card Style */
+.glass{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  backdrop-filter:blur(10px);
+  padding:25px;
+  border-radius:15px;
+  transition:0.3s;
+}
+.glass:hover{transform:translateY(-8px); background:rgba(255,255,255,0.08)}
+
+/* ABOUT GRID */
+.about-grid{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  gap:25px;
+}
+
+/* PROJECTS */
+.project-grid{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+  gap:30px;
+}
+.project-card img{
+  width:100%; height:180px; border-radius:12px; object-fit:cover;
+}
+.project-card h3{margin:10px 0}
+.card-links{margin-top:10px; display:flex; gap:15px}
+.card-links a{color:#00eaff; text-decoration:none; font-weight:600}
+
+/* SKILLS */
+.skills-grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+.skill-box{
+  text-align:center; padding:20px; font-weight:500;
+}
+
+/* CONTACT */
+.contact-grid{
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:25px; text-align:left;
+}
+.contact-form input, .contact-form textarea{
+  width:100%; margin:10px 0; padding:12px;
+  border-radius:10px; border:none;
+  background:rgba(255,255,255,0.1);
+  color:#fff;
+}
+@media(max-width:800px){
+  .contact-grid{grid-template-columns:1fr}
+}
+
+/* Footer */
+footer{
+  text-align:center;
+  padding:20px 0;
+  color:#94a3b8;
+  margin-top:40px;
+}
